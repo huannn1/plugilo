@@ -1,14 +1,121 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+  <!-- Meta -->
   <meta charset="utf-8">
-  <title>Cockpit</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Plugilo description">
+  <meta name="keywords" content="AngularSpree, Spree Commerce, Angular, Angular2, Angular5, Pune, Ruby on Rails, RoR, India, Rails development, open source, Web application development">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Plugilo</title>
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/solid.js" integrity="sha384-652/z7yNdGONCCBu0u5h5uF9voJhBdgruAuIDVheEaQ7O/ZC9wyyV+yZsYb32Wy7"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/fontawesome.js" integrity="sha384-6AOxTjzzZLvbTJayrLOYweuPckqh0rrB4Sj+Js8Vzgr85/qm2e0DRqi+rBzyK52J"
+    crossorigin="anonymous"></script>
+
+  <!-- Google Analystics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-96095791-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div class="loading-backdrop">
+      <div class="loading-container">
+        <div class="loader"></div>
+        <img class="loader-image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iRWJlbmVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzOTkuMyAxMDEuMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzk5LjMgMTAxLjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxyZWN0IHg9IjE4MS40IiB5PSI1LjIiIGNsYXNzPSJzdDAiIHdpZHRoPSI2LjciIGhlaWdodD0iNzAuNyIvPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNzQuMyw3My43Yy05LjgsMC0xNy44LTEwLjItMTcuOC0yMi44czgtMjIuOCwxNy44LTIyLjhzMTcuOCwxMC4yLDE3LjgsMjIuOA0KCQkJQzI5Mi4yLDYzLjQsMjg0LjIsNzMuNywyNzQuMyw3My43IE0yOTIuMiwzMC42Yy00LjUtNS43LTEwLjgtOS4zLTE3LjgtOS4zYy0xMy41LDAtMjQuNSwxMy4yLTI0LjUsMjkuNXMxMSwyOS41LDI0LjUsMjkuNQ0KCQkJYzcsMCwxMy4zLTMuNiwxNy44LTkuM3YxLjhjMCwxNC4yLTUuNiwxOC0xNS4yLDE5LjVjLTEyLjgsMS4yLTE2LjktNS44LTE3LTYuMWwtMi45LDEuNmwtMywxLjVjMC4yLDAuNCw1LjIsOS43LDIwLDkuNw0KCQkJYzEuMSwwLDIuNC0wLjEsMy42LTAuMmgwLjJjMTAtMS42LDIwLjItNS44LDIwLjgtMjQuNGwwLDBWMjQuN0gyOTJ2NS45SDI5Mi4yeiIvPg0KCTwvZz4NCgk8Zz4NCgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIzNC40LDY0LjJjLTIuNCwyLjktNy45LDguMi0xMy40LDguM2MtNSwwLjEtOC40LTAuOS0xMC43LTMuMmMtMi42LTIuNS0zLjktNi45LTMuOS0xM1YyNS4yaC02Ljd2MzEuMg0KCQkJYzAsOCwyLDEzLjksNS45LDE3LjdjMy41LDMuNCw4LjMsNS4xLDE0LjgsNS4xYzAuMiwwLDAuNCwwLDAuNywwYzUuMi0wLjEsOS45LTIuOCwxMy4zLTUuNnY0LjloNi43VjI1LjJoLTYuN0wyMzQuNCw2NC4yDQoJCQlMMjM0LjQsNjQuMnoiLz4NCgk8L2c+DQo8L2c+DQo8cmVjdCB4PSIzMTAiIHk9IjI1LjIiIGNsYXNzPSJzdDAiIHdpZHRoPSI2LjciIGhlaWdodD0iNTAuMSIvPg0KPHJlY3QgeD0iMzI4LjUiIHk9IjUuMiIgY2xhc3M9InN0MCIgd2lkdGg9IjYuNyIgaGVpZ2h0PSI3MC4xIi8+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTM3MC4yLDczLjdjLTEwLjQsMC0xOC44LTEwLjItMTguOC0yMi44czguNC0yMi44LDE4LjgtMjIuOFMzODksMzguMiwzODksNTAuOFMzODAuNiw3My43LDM3MC4yLDczLjcNCgkJCSBNMzcwLjIsMjEuM2MtMTQsMC0yNS41LDEzLjItMjUuNSwyOS41czExLjQsMjkuNSwyNS41LDI5LjVjMTQsMCwyNS41LTEzLjIsMjUuNS0yOS41UzM4NC4zLDIxLjMsMzcwLjIsMjEuMyIvPg0KCTwvZz4NCgk8Zz4NCgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTMxNi45LDEyLjljMCwyLTEuNiwzLjYtMy42LDMuNnMtMy42LTEuNi0zLjYtMy42czEuNi0zLjYsMy42LTMuNlMzMTYuOSwxMC45LDMxNi45LDEyLjkiLz4NCgk8L2c+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NS41LDQ3LjVINzQuMmMtMi0xMi45LTE0LTI1LjMtMjguNS0yNy45Yy01LjMtMC45LTcuOS0xLTEzLjgtMXYxMi44SDkuNmMtMi45LDAtNS4zLDIuNC01LjMsNS40DQoJCQlzMi40LDUuNCw1LjMsNS40aDIyLjNWNjBIOS43Yy0yLjksMC01LjMsMi40LTUuMyw1LjRzMi40LDUuNCw1LjMsNS40aDIyLjJ2MTNjNS45LDAsMTAtMC4xLDEzLjktMS4xQzU5LjksNzkuMSw3Mi4xLDY3LjYsNzQuMSw1NQ0KCQkJaDExLjNMODUuNSw0Ny41TDg1LjUsNDcuNXoiLz4NCgk8L2c+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDguMyw3My43Yy04LjgsMC0xNi4xLTguMi0xNy42LTE5VjQ3YzEuNC0xMC44LDguNy0xOSwxNy42LTE5YzkuOCwwLDE3LjgsMTAuMiwxNy44LDIyLjgNCgkJCVMxNTguMSw3My43LDE0OC4zLDczLjcgTTE0OC4zLDIxLjNjLTYuOSwwLTEzLjEsMy40LTE3LjYsOXYtNS42SDEyNFYzOXY3LjVWNTV2MTIuNnYyNy43aDYuN3YtMjRjNC41LDUuNSwxMC43LDksMTcuNiw5DQoJCQljMTMuNSwwLDI0LjUtMTMuMiwyNC41LTI5LjVTMTYxLjgsMjEuMywxNDguMywyMS4zIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
+        />
+      </div>
+    </div>
+
+    <style>
+      .loading-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ECEFF1
+      }
+
+      .loading-container {
+        vertical-align: middle;
+        text-align: center;
+        border-style: none;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        line-height: 160px
+      }
+
+      .loader {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #33A9E0;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        -webkit-animation: bounce 2.0s infinite ease-in-out;
+        animation: bounce 2.0s infinite ease-in-out
+      }
+
+      .loader-image {
+        width: 100px;
+        height: 25px;
+        position: relative;
+        z-index: 1;
+      }
+
+      @-webkit-keyframes bounce {
+        0%,
+        100% {
+          -webkit-transform: scale(0.8)
+        }
+
+        50% {
+          -webkit-transform: scale(1)
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: scale(0);
+          -webkit-transform: scale(0.8)
+        }
+
+        50% {
+          transform: scale(1);
+          -webkit-transform: scale(1)
+        }
+      }
+    </style>
+  </app-root>
+
+  <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
 </body>
+
 </html>

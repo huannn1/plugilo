@@ -1,0 +1,44 @@
+<div>
+    <section >
+      <app-header></app-header>
+      <!-- <app-loading-indicator></app-loading-indicator> -->
+    </section>
+  
+    <div class="container-fluid">
+        <div class="row">
+          <nav class="col-md-2 d-none d-md-block bg-light sidebar" >
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/" 
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLinkActive="active">
+                    <span data-feather="home"></span>
+                    Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/company" 
+                    routerLinkActive="active">
+                    <span data-feather="file"></span>
+                    Company
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/profile" 
+                    routerLinkActive="active">
+                    <span data-feather="file"></span>
+                    Profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0">
+              <router-outlet></router-outlet>
+          </main>
+        </div>
+      </div>
+  </div>

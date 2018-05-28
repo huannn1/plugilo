@@ -1,0 +1,10 @@
+<div class="nav-scroller bg-white box-shadow">
+    <nav class="nav nav-underline">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/company']" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/company', 'highlights']">Highlights</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/company', 'widgets']">Widgets</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/company', 'statistics']">Statistics</a>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

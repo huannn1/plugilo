@@ -1,0 +1,4 @@
+<div *ngIf="!((customLists$ | async)?.length)">There's no custom lists</div>
+<div *ngFor="let customList of (customLists$ | async)">
+  <div>{{customList.name}}</div>
+</div>

@@ -1,0 +1,14 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/profile']"
+        [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/profile', 'lists']">Lists</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/profile', 'notifications']">Notifications</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

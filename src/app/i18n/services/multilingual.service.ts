@@ -9,7 +9,7 @@
 // import { Analytics, AnalyticsService } from '../../analytics/index';
 // import { ILang } from '../../core/index';
 // import { WindowService } from '../../core/services/window.service';
-// import { IAppState } from '../../interfaces';
+// import { IAppState } from '../../app.reducers';
 
 // // module
 // import { CATEGORY } from '../common/category.common';

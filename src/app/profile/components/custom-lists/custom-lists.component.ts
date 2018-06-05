@@ -12,7 +12,7 @@ import { CustomList } from '../../models/custom-list.model';
 export class CustomListsComponent implements OnInit {
   customLists$: Observable<CustomList[]>;
 
-  constructor(private store: Store<fromStore.ProfileState>) { 
+  constructor(private store: Store<fromStore.IProfileState>) { 
 
   }
 

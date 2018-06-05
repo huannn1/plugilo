@@ -7,6 +7,7 @@ export const LOAD_CUSTOM_LISTS_SUCCESS = '[Profile] Load Custom Lists Success';
 
 export class LoadCustomLists implements Action {
     readonly type: string = LOAD_CUSTOM_LISTS;
+    constructor(public payload?: any) { }
 }
 
 export class LoadCustomListsFail implements Action {

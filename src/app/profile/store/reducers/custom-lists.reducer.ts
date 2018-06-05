@@ -1,46 +1,43 @@
-import * as fromCustomLists from '../actions/custom-lists.actions';
+import * as fromActions from '../actions';
+import * as fromStates from '../states';
 import { CustomList } from "../../models/custom-list.model";
 
-export interface CustomListState {
-    data: CustomList[],
-    loaded: boolean;
-    loading: boolean
-}
+export function reducer(
+    state: fromStates.ICustomListState = fromStates.initialState, 
+    action: fromActions.CustomListsAction): fromStates.ICustomListState {
 
-// export const samples: CustomList[] = [
-    // { id: 1, name: 'Seaside Surfin' },
-    // { id: 2, name: 'Sunny day' },
-    // { id: 3, name: 'Poppy blo' }
-// ]
-
-export const initialState: CustomListState = {
-    data: [],
-    loaded: false,
-    loading: false
-}
-
-export function reducer(state = initialState, action: fromCustomLists.CustomListsAction): CustomListState {
     switch (action.type) {
-        case fromCustomLists.LOAD_CUSTOM_LISTS: {
+        case fromActions.LOAD_CUSTOM_LISTS: {
             return {
                 ...state,
                 loading: true
             };
         }
 
-        case fromCustomLists.LOAD_CUSTOM_LISTS_SUCCESS: {
-            var data = action.payload;
+        case fromActions.LOAD_CUSTOM_LISTS_SUCCESS: {
+            var customLists = action.payload;
+            const entities = customLists.reduce((entities: { [id: number]: CustomList }, customList) => {
+                return {
+                    ...entities,
+                    [customList.id]: customList
+                }
+            },
+                {
+                    ...state.entities
+                }
+            );
+
             var returnedData = {
                 ...state,
                 loading: false,
                 loaded: true,
-                data
+                entities
             };
-            debugger;
+
             return returnedData;
         }
 
-        case fromCustomLists.LOAD_CUSTOM_LISTS_FAIL: {
+        case fromActions.LOAD_CUSTOM_LISTS_FAIL: {
             return {
                 ...state,
                 loading: false,
@@ -52,6 +49,6 @@ export function reducer(state = initialState, action: fromCustomLists.CustomList
     return state;
 }
 
-export const getCustomListsLoading = (state:CustomListState) => state.loading;
-export const getCustomListsLoaded = (state:CustomListState) => state.loaded;
-export const getCustomLists = (state:CustomListState) => state.data;
+export const getCustomListsEntities = (state: fromStates.ICustomListState) => state.entities;
+export const getCustomListsLoading = (state: fromStates.ICustomListState) => state.loading;
+export const getCustomListsLoaded = (state: fromStates.ICustomListState) => state.loaded;

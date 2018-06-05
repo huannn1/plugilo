@@ -3,10 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterState } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 
 // Routes
 import { routes } from './app.routes';
@@ -25,7 +26,7 @@ import { environment } from '../environments/environment';
 // import { JwtModule } from '@auth0/angular-jwt';
 // import { AuthService } from './auth/auth.service';
 import { AppErrorHandler } from './core/errors/app-error-handler';
-import { appReducers, metaReducers } from './app.reducers';
+import { appReducers, metaReducers, CustomSerializer } from './app.reducers';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -46,6 +47,7 @@ import { HomeComponent } from './home/components/home/home.component';
     NgbModule.forRoot(),
     StoreModule.forRoot(appReducers, { metaReducers }),
     EffectsModule.forRoot([]),
+
     BrowserModule,
 
     // HomeModule,
@@ -69,7 +71,8 @@ import { HomeComponent } from './home/components/home/home.component';
   providers: [
     // AngularFireAuth,
     // AuthService,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],
   bootstrap: [AppComponent]
 })

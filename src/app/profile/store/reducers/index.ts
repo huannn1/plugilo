@@ -1,13 +1,14 @@
 
-import * as fromCustomLists from './custom-lists.reducer';
+import * as fromState from '../states';
+import * as fromReducer from './custom-lists.reducer';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 
 export interface IProfileState {
-    customLists: fromCustomLists.ICustomListState
+    customLists: fromState.ICustomListState
 }
 
 export const reducers: ActionReducerMap<IProfileState> = {
-    customLists: fromCustomLists.reducer
+    customLists: fromReducer.reducer
 };
 
 export const getProfileState = createFeatureSelector<IProfileState>('profile');

@@ -1,17 +1,46 @@
-<div class="app-root main-aside-left-minimize main-header-fixed"
-  [ngClass]="{'main-aside-left-fixed': isMenuActive}">
+<div class="pl-root pl-aside-left--fixed pl-header--fixed" [ngClass]="{'pl-aside-left--minimize': !isMenuActiveOnDesktop, 'pl-aside-left--on': isMenuActiveOnMobile}">
 
-  <header id="main-header" class="main-header">
-    <a class="brand-toggler float-right" (click)="toggleMenu()">Toggle</a>
-  </header>
-
-  
-  <div class="main-body">
-    <div class="main-aside-left" [ngClass]="{'main-aside-left-on': isMenuActive}">
-      ASIDE_LEFT  
+  <header id="pl-header" class="pl-header pl-header--light">
+    <div class="pl-aside-toggler">
+      <button class="pl-aside-toggler__btn" (click)="toggleMenu()">
+        <span class="fa fa-bars"></span>
+      </button>
     </div>
 
-    <div class="main-aside-left-overlay"></div>
+    <div class="pl-brand">
+
+    </div>
+
+    <div class="pl-topbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <span class="fa fa-bell"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="fa fa-plus"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">
+            <span class="pl-topbar__userpic">
+              <img class="rounded-circle" src="https://keenthemes.com/metronic/preview/assets/app/media/img/users/user4.jpg" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div class="pl-body">
+    <div class="pl-aside-left pl-aside-left--skin-light">
+      ASIDE_LEFT
+    </div>
+
+    <div class="pl-aside-left-overlay" (click)="toggleMenu()"></div>
   </div>
 </div>
 

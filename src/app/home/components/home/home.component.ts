@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isMenuActive = true;
+  isMenuActiveOnDesktop = true;
+  isMenuActiveOnMobile = false;
 
   constructor() { }
 
@@ -14,6 +15,11 @@ export class HomeComponent implements OnInit {
   }
 
   toggleMenu() {
-    this.isMenuActive = !this.isMenuActive;
+    const isMobile = window.innerWidth <= 992;
+    if (isMobile) {
+      this.isMenuActiveOnMobile = !this.isMenuActiveOnMobile;
+    } else {
+      this.isMenuActiveOnDesktop = !this.isMenuActiveOnDesktop;
+    }
   }
 }

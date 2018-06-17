@@ -1,7 +1,23 @@
-<div>
+<div class="app-root main-aside-left-minimize main-header-fixed"
+  [ngClass]="{'main-aside-left-fixed': isMenuActive}">
+
+  <header id="main-header" class="main-header">
+    <a class="brand-toggler float-right" (click)="toggleMenu()">Toggle</a>
+  </header>
+
+  
+  <div class="main-body">
+    <div class="main-aside-left" [ngClass]="{'main-aside-left-on': isMenuActive}">
+      ASIDE_LEFT  
+    </div>
+
+    <div class="main-aside-left-overlay"></div>
+  </div>
+</div>
+
+<!-- <div>
     <section >
       <app-header></app-header>
-      <!-- <app-loading-indicator></app-loading-indicator> -->
     </section>
   
     <div class="container-fluid">
@@ -41,4 +57,4 @@
           </main>
         </div>
       </div>
-  </div>
+  </div> -->

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "loading-indicator.component.scss"
+    ],
+    "names": [],
+    "file": "loading-indicator.component.css"
+}

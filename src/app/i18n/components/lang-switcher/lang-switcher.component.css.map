@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "lang-switcher.component.scss"
+    ],
+    "names": [],
+    "file": "lang-switcher.component.css"
+}

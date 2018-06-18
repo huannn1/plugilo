@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   isMenuActiveOnDesktop = true;
   isMenuActiveOnMobile = false;
+  isQuickSidebarActive = false;
 
   constructor() { }
 
@@ -21,5 +22,9 @@ export class HomeComponent implements OnInit {
     } else {
       this.isMenuActiveOnDesktop = !this.isMenuActiveOnDesktop;
     }
+  }
+
+  toggleQuickSidebar() {
+    this.isQuickSidebarActive = !this.isQuickSidebarActive;
   }
 }

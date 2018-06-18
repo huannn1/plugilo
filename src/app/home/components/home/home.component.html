@@ -1,4 +1,8 @@
-<div class="pl-root pl-aside-left--fixed pl-header--fixed" [ngClass]="{'pl-aside-left--minimize': !isMenuActiveOnDesktop, 'pl-aside-left--on': isMenuActiveOnMobile}">
+<div class="pl-root pl-aside-left--fixed pl-header--fixed" 
+  [ngClass]="{
+    'pl-aside-left--minimize': !isMenuActiveOnDesktop, 
+    'pl-aside-left--on': isMenuActiveOnMobile,
+    'pl-quick-sidebar--on': isQuickSidebarActive}">
 
   <header id="pl-header" class="pl-header pl-header--light">
     <div class="pl-aside-toggler">
@@ -7,25 +11,35 @@
       </button>
     </div>
 
-    <div class="pl-brand">
-
+    <div class="pl-brand pl-brand--plugilo">
+      <span class="pl-icon-plug-a pl-brand__icon"></span>
+      <span>plugilo</span>
     </div>
 
     <div class="pl-topbar">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
-            <span class="fa fa-bell"></span>
+      <ul class="pl-topbar-nav pl-topbar-nav--inline">
+        <li class="pl-topbar-nav__item">
+          <a class="pl-topbar-nav__link" href="#">
+            <span class="pl-topbar-nav__link-icon">
+              <span class="pl-topbar-nav__link-icon-wrapper">
+                <span class="far fa-bell pl-topbar-nav__icon"></span>
+              </span>
+            </span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="fa fa-plus"></span>
+        <li class="pl-topbar-nav__item">
+          <a class="pl-topbar-nav__link" href="#">
+            <span class="pl-topbar-nav__link-badge pl-badge pl-badge--danger pl-badge--dot-small"></span>
+            <span class="pl-topbar-nav__link-icon">
+              <span class="pl-topbar-nav__link-icon-wrapper">
+                <span class="far fa-envelope pl-topbar-nav__icon"></span>
+              </span>
+            </span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">
-            <span class="pl-topbar__userpic">
+        <li class="pl-topbar-nav__item">
+          <a class="pl-topbar-nav__link" href="#" (click)="toggleQuickSidebar()">
+            <span class="pl-topbar-nav__userpic">
               <img class="rounded-circle" src="https://keenthemes.com/metronic/preview/assets/app/media/img/users/user4.jpg" alt="">
             </span>
           </a>
@@ -34,8 +48,8 @@
     </div>
   </header>
 
-
   <div class="pl-body">
+    <!-- Aside Left -->
     <div class="pl-aside-left pl-aside-left--skin-light">
       <div class="pl-navviews">
         <div class="pl-navview">
@@ -43,13 +57,17 @@
             Nav view header 01
           </header>
           <div class="pl-navview__body">
-
           </div>
         </div>
       </div>
     </div>
-
     <div class="pl-aside-left-overlay" (click)="toggleMenu()"></div>
+
+    <!-- Aside Right -->
+    <div class="pl-quick-sidebar">
+      Hello
+    </div>
+    <div class="pl-quick-sidebar-overlay" (click)="toggleQuickSidebar()"></div>
   </div>
 </div>
 

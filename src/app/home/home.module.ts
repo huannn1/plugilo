@@ -7,6 +7,7 @@ import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { LayoutModule } from '../layout/layout.module';
+import { BootstrapallComponent } from './components/bootstrapall/bootstrapall.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { LayoutModule } from '../layout/layout.module';
     AuthModule,
     LayoutModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, BootstrapallComponent]
 })
 export class HomeModule { }

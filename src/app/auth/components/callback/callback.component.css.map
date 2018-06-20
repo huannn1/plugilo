@@ -1,9 +1,7 @@
 {
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "callback.component.scss"
-    ],
-    "names": [],
-    "file": "callback.component.css"
+"version": 3,
+"mappings": "",
+"sources": [],
+"names": [],
+"file": "callback.component.css"
 }

@@ -4,7 +4,7 @@
     'pl-aside-left--on': isMenuActiveOnMobile,
     'pl-quick-sidebar--on': isQuickSidebarActive}">
 
-  <header id="pl-header" class="pl-header pl-header--light">
+  <header id="pl-header" class="pl-header pl-header--light shadow-sm">
     <div class="pl-aside-toggler">
       <button class="pl-aside-toggler__btn" (click)="toggleMenu()">
         <span class="fa fa-bars"></span>
@@ -33,6 +33,16 @@
             <span class="pl-topbar-nav__link-icon">
               <span class="pl-topbar-nav__link-icon-wrapper">
                 <span class="far fa-envelope pl-topbar-nav__icon"></span>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="pl-topbar-nav__item">
+          <a class="pl-topbar-nav__link" href="#">
+            <span class="pl-topbar-nav__link-badge pl-badge pl-badge--danger pl-badge--dot-small"></span>
+            <span class="pl-topbar-nav__link-icon">
+              <span class="pl-topbar-nav__link-icon-wrapper">
+                <span class="fa fa-globe pl-topbar-nav__icon"></span>
               </span>
             </span>
           </a>
@@ -68,6 +78,11 @@
       Hello
     </div>
     <div class="pl-quick-sidebar-overlay" (click)="toggleQuickSidebar()"></div>
+
+    <!-- Main Content -->
+    <div>
+      <app-bootstrapall></app-bootstrapall>
+    </div>
   </div>
 </div>
 

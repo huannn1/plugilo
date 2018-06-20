@@ -36,11 +36,13 @@ export function tokenGetter() {
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { HomeComponent } from './home/components/home/home.component';
+import { BootstrapallComponent } from './home/components/bootstrapall/bootstrapall.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BootstrapallComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

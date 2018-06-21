@@ -90,12 +90,12 @@
 .border-bottom {
     border-bottom: 1px solid #e5e5e5;
 } // 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 $main-header-height: 3rem;
 $aside-left-width: 14rem;
 
 html {
-    font-family: 'Open Sans', sans-serif;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -114,6 +114,8 @@ html {
 }
 
 body {
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     // background-color: #F2F3F8;
     display: -webkit-box;
     display: -ms-flexbox;

@@ -1,23 +1,40 @@
-<div class="pl-root pl-aside-left--fixed pl-header--fixed" 
-  [ngClass]="{
+<div class="pl-root pl-aside-left--fixed pl-header--fixed" [ngClass]="{
     'pl-aside-left--minimize': !isMenuActiveOnDesktop, 
     'pl-aside-left--on': isMenuActiveOnMobile,
     'pl-quick-sidebar--on': isQuickSidebarActive}">
 
-  <header id="pl-header" class="pl-header pl-header--light shadow-sm">
-    <div class="pl-aside-toggler">
-      <button class="pl-aside-toggler__btn" (click)="toggleMenu()">
-        <span class="fa fa-bars"></span>
-      </button>
+  <header id="pl-header" class="pl-header pl-header--light">
+    <div class="pl-header__left">
+      <div class="pl-aside-toggler">
+        <button class="pl-aside-toggler__btn" (click)="toggleMenu()">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+
+      <div class="pl-brand pl-brand--plugilo d-none d-lg-block">
+        <span class="pl-icon-plug-a pl-brand__icon"></span>
+        <span>plugilo</span>
+      </div>
     </div>
 
-    <div class="pl-brand pl-brand--plugilo">
-      <span class="pl-icon-plug-a pl-brand__icon"></span>
-      <span>plugilo</span>
+    <div class="pl-header__center">
+      <div class="pl-header__content-title">
+        <span class="fa fa-building"></span>
+        DCI AG Title Or Something will be here
+      </div>
     </div>
 
     <div class="pl-topbar">
       <ul class="pl-topbar-nav pl-topbar-nav--inline">
+        <li class="pl-topbar-nav__item">
+          <a class="pl-topbar-nav__link" href="#">
+            <span class="pl-topbar-nav__link-icon">
+              <span class="pl-topbar-nav__link-icon-wrapper">
+                <span class="fa fa-search pl-topbar-nav__icon"></span>
+              </span>
+            </span>
+          </a>
+        </li>
         <li class="pl-topbar-nav__item">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-icon">
@@ -58,18 +75,157 @@
     </div>
   </header>
 
+  <!-- <div class="pl-header-shadow shadow-sm"></div> -->
+
   <div class="pl-body">
+    <div class="pl-content-topbar shadow-sm">
+      <ul class="nav pl-nav-tabs">
+        <li class="nav-item pl-nav__item">
+            <a class="nav-link pl-nav__link" href="#">
+              <span class="fa fa-eye"></span>
+              Data
+            </a>
+        </li>
+        <li class="nav-item pl-nav__item active">
+          <a class="nav-link pl-nav__link" href="#">
+            <span class="fa fa-box"></span>
+            Products
+          </a>
+        </li>
+        <li class="nav-item pl-nav__item">
+          <a class="nav-link pl-nav__link" href="#">
+            <span class="fa fa-building"></span>
+            Companies</a>
+        </li>
+        <li class="nav-item pl-nav__item ">
+          <a class="nav-link pl-nav__link" href="#">
+            <span class="fa fa-users"></span>
+            Users</a>
+        </li>
+        <li class="nav-item pl-nav__item ">
+          <a class="nav-link pl-nav__link" href="#">
+            <span class="fa fa-list"></span>
+            Lists</a>
+        </li>
+      </ul>
+    </div>
+
     <!-- Aside Left -->
     <div class="pl-aside-left pl-aside-left--skin-light">
-      <div class="pl-navviews">
-        <div class="pl-navview">
-          <header class="pl-navview__header">
-            Nav view header 01
-          </header>
-          <div class="pl-navview__body">
-          </div>
-        </div>
+      <div class="pl-brand pl-brand--plugilo d-lg-none">
+        <span class="pl-icon-plug-a pl-brand__icon"></span>
+        <span>plugilo</span>
       </div>
+
+      <ul class="pl-navviews">
+        <li class="pl-navview pl-navview--primary">
+          <header class="pl-navview__header ">
+            <span class="pl-navview__header-icon far fa-bell"></span>
+            <span class="pl-navview__header-text">Nav view header 01</span>
+            <span class="pl-navview__header-expander"></span>
+          </header>
+
+          <div class="pl-navview__body">
+            <ul class="pl-navview__items">
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Overview</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Platform</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Hello</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-expander"></span>
+                  <span class="pl-navview__item-text">Great</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="pl-navview">
+          <header class="pl-navview__header">
+            <span class="pl-navview__header-icon fa fa-list"></span>
+            <span class="pl-navview__header-text">My Lists</span>
+            <span class="pl-navview__header-expander"></span>
+          </header>
+
+          <div class="pl-navview__body">
+            <ul class="pl-navview__items">
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Bookmarks</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">DCI Test</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Lifestyle</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-expander"></span>
+                  <span class="pl-navview__item-text">Shopping List</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="pl-navview">
+          <header class="pl-navview__header">
+            <span class="pl-navview__header-icon fa fa-clock"></span>
+            <span class="pl-navview__header-text">Recent Items</span>
+            <span class="pl-navview__header-expander"></span>
+          </header>
+
+          <div class="pl-navview__body">
+            <ul class="pl-navview__items">
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">DCI AG</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Samsung - Hotdeals</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">DCI Informer KW22</span>
+                </a>
+              </li>
+              <li class="pl-navview__item">
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-expander"></span>
+                  <span class="pl-navview__item-text">Shopping List</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="pl-aside-left-overlay" (click)="toggleMenu()"></div>
 

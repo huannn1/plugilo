@@ -8,6 +8,10 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { LayoutModule } from '../layout/layout.module';
 import { BootstrapallComponent } from './components/bootstrapall/bootstrapall.component';
+import { ListComponent } from './components/list/list.component';
+import { HighlightComponent } from './components/highlight/highlight.component';
+import { CompanyWebComponent } from './components/company-web/company-web.component';
+import { CompanyDataComponent } from './components/company-data/company-data.component';
 
 @NgModule({
   imports: [
@@ -17,6 +21,6 @@ import { BootstrapallComponent } from './components/bootstrapall/bootstrapall.co
     AuthModule,
     LayoutModule
   ],
-  declarations: [HomeComponent, BootstrapallComponent]
+  declarations: [HomeComponent, BootstrapallComponent, ListComponent, HighlightComponent, CompanyWebComponent, CompanyDataComponent]
 })
 export class HomeModule { }

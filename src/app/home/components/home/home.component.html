@@ -1,4 +1,4 @@
-<div class="pl-root pl-aside-left--fixed pl-header--fixed" [ngClass]="{
+<div class="pl-root pl-aside-left--fixed pl-header--fixed pl-content-topbar--fixed" [ngClass]="{
     'pl-aside-left--minimize': !isMenuActiveOnDesktop, 
     'pl-aside-left--on': isMenuActiveOnMobile,
     'pl-quick-sidebar--on': isQuickSidebarActive}">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="pl-topbar">
-      <ul class="pl-topbar-nav pl-topbar-nav--inline">
+      <ul class="pl-topbar-nav pl-topbar-nav--inline mr-auto">
         <li class="pl-topbar-nav__item">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-icon">
@@ -35,7 +35,7 @@
             </span>
           </a>
         </li>
-        <li class="pl-topbar-nav__item">
+        <li class="pl-topbar-nav__item d-none d-lg-flex">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-icon">
               <span class="pl-topbar-nav__link-icon-wrapper">
@@ -44,7 +44,7 @@
             </span>
           </a>
         </li>
-        <li class="pl-topbar-nav__item">
+        <li class="pl-topbar-nav__item d-none d-lg-flex">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-badge pl-badge pl-badge--danger pl-badge--dot-small"></span>
             <span class="pl-topbar-nav__link-icon">
@@ -54,7 +54,7 @@
             </span>
           </a>
         </li>
-        <li class="pl-topbar-nav__item">
+        <li class="pl-topbar-nav__item d-none d-lg-flex">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-badge pl-badge pl-badge--danger pl-badge--dot-small"></span>
             <span class="pl-topbar-nav__link-icon">
@@ -78,13 +78,13 @@
   <!-- <div class="pl-header-shadow shadow-sm"></div> -->
 
   <div class="pl-body">
-    <div class="pl-content-topbar shadow-sm">
-      <ul class="nav pl-nav-tabs">
+    <div class="pl-content-topbar shadow-sm d-flex">
+      <ul class="nav pl-content-tabs">
         <li class="nav-item pl-nav__item">
-            <a class="nav-link pl-nav__link" href="#">
-              <span class="fa fa-eye"></span>
-              Data
-            </a>
+          <a class="nav-link pl-nav__link" href="#">
+            <span class="fa fa-eye"></span>
+            Data
+          </a>
         </li>
         <li class="nav-item pl-nav__item active">
           <a class="nav-link pl-nav__link" href="#">
@@ -106,6 +106,35 @@
           <a class="nav-link pl-nav__link" href="#">
             <span class="fa fa-list"></span>
             Lists</a>
+        </li>
+      </ul>
+
+      <ul class="nav pl-content-actions d-lg-none ml-auto">
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="far fa-dot-circle"></span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav pl-content-actions d-none d-lg-flex ml-auto">
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="pl-icon-plug-a pl-nav__link-icon"></span> 
+            <span class="">Connect</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="far fa-comment-alt pl-nav__link-icon"></span> 
+            <span>Chat</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="fa fa-share-alt pl-nav__link-icon"></span> 
+            <span>Share</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -236,11 +265,15 @@
     <div class="pl-quick-sidebar-overlay" (click)="toggleQuickSidebar()"></div>
 
     <!-- Main Content -->
-    <div class="mt-5">
-        Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.
+    <div class="flex-fill pl-body-inner--lightgray">
+      <!-- Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.
+      By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud
+      beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn
+      with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.
 
 
-      <app-bootstrapall></app-bootstrapall>
+      <app-bootstrapall></app-bootstrapall> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

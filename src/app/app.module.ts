@@ -37,12 +37,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { HomeComponent } from './home/components/home/home.component';
 import { BootstrapallComponent } from './home/components/bootstrapall/bootstrapall.component';
+import { ListComponent } from './home/components/list/list.component';
+import { CompanyDataComponent } from './home/components/company-data/company-data.component';
+import { CompanyWebComponent } from './home/components/company-web/company-web.component';
+import { HighlightComponent } from './home/components/highlight/highlight.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BootstrapallComponent
+    BootstrapallComponent,
+    ListComponent,
+    CompanyDataComponent,
+    CompanyWebComponent,
+    HighlightComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -1,0 +1,33 @@
+// Quick Sidebar
+.pl-quick-sidebar {
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    overflow-y: auto;
+    width: 400px;
+    background-color: $white;
+    transition: all .3s ease;
+}
+
+.pl-quick-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, .1);
+    display: none;
+}
+
+.pl-quick-sidebar--on {
+    .pl-quick-sidebar {
+        right: 0;
+    }
+    .pl-quick-sidebar-overlay {
+        display: block;
+    }
+}

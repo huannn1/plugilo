@@ -1,462 +1,8 @@
-@import "vendors/bootstrap/bootstrap.custom";
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-$main-header-height: 3rem;
-$main-content-top-bar-height: 2rem;
-$aside-left-width: 14rem;
-
-html {
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent
-}
-
-body,
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    -ms-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-body {
-    // font-family: 'Open Sans', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif; // background-color: #F2F3F8;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
-}
-
-app-root,
-app-home,
-.pl-root {
-    flex: 1;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0 0px;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-}
-
-.pl-header {
-    position: relative;
-    display: flex;
-    flex-flow: row nowrap;
-    height: $main-header-height;
-    flex: none; // box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-    border-bottom: 1px solid $gray-200;
-}
-
-.pl-header__left {
-    display: flex;
-    @include media-breakpoint-up(lg) {
-        width: $aside-left-width;
-    }
-}
-
-.pl-header__center {
-    padding: 0.5rem 0;
-    margin: 0 .5rem;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    overflow: hidden;
-}
-
-.pl-header__content-title {
-    font-size: 1rem;
-    font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.pl-header-shadow {
-    position: fixed;
-    height: $main-header-height;
-    z-index: 98;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
-.pl-header--light {
-    background-color: $white;
-}
-
-.pl-content-topbar {
-    position: fixed;
-    height: 2rem;
-    top: 3rem;
-    left: 0;
-    right: 0;
-    background-color: $white;
-    z-index: 1; // TODO:
-}
-
-.pl-body {
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0 0px;
-    flex: 1 0 auto;
-    flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    transition: all .3s ease;
-}
-
-.pl-header--fixed {
-    .pl-header {
-        backface-visibility: hidden;
-        z-index: 99; // TODO: update z-index by const
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-    .pl-body {
-        padding-top: $main-header-height;
-    }
-}
-
-.pl-aside-left {
-    width: $aside-left-width;
-    transition: all .2s ease;
-    &.pl-aside-left--skin-dark {
-        background-color: $dark;
-    }
-    &.pl-aside-left--skin-light {
-        background-color: $white;
-    }
-    @include media-breakpoint-down(lg) {
-        position: fixed;
-        z-index: 1001; // TODO: update this z-index
-        top: 0;
-        bottom: 0;
-        left: -$aside-left-width;
-        overflow-y: auto;
-    }
-    @include media-breakpoint-up(lg) {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 98;
-        overflow-y: auto;
-    }
-}
-
-.pl-aside-left-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, .1);
-    display: none; // Hide
-}
-
-.pl-aside-left--on {
-    @include media-breakpoint-down(lg) {
-        .pl-aside-left {
-            left: 0;
-        }
-        .pl-aside-left-overlay {
-            display: block;
-        }
-    }
-}
-
-.pl-aside-left--fixed {
-    @include media-breakpoint-up(lg) {
-        .pl-body {
-            padding-left: $aside-left-width;
-        }
-        .pl-aside-left {
-            left: 0;
-        }
-        .pl-content-topbar {
-            left: $aside-left-width;
-        }
-    }
-}
-
-.pl-aside-left--minimize {
-    @include media-breakpoint-up(lg) {
-        .pl-aside-left {
-            left: -$aside-left-width;
-        }
-        .pl-body {
-            padding-left: 0;
-        }
-        .pl-content-topbar {
-            left: 0;
-        }
-    }
-}
-
-.pl-aside-left--fixed.pl-header--fixed {
-    @include media-breakpoint-up(lg) {
-        .pl-aside-left {
-            top: $main-header-height;
-        }
-        .pl-content-topbar {
-            top: $main-header-height;
-        }
-    }
-}
-
-.pl-content-topbar--fixed {
-    .pl-body {
-        padding-top: calc(#{$main-header-height} + #{$main-content-top-bar-height});
-    }
-}
-
-.pl-aside-toggler {}
-
-.pl-aside-toggler__btn {
-    cursor: pointer;
-    display: inline-block;
-    width: 3.5rem;
-    height: $main-header-height;
-    line-height: $main-header-height;
-    text-align: center;
-    background-color: transparent;
-    border: 0;
-    border-right: 1px solid $input-border-color;
-    outline: none;
-}
-
-.pl-brand {
-    line-height: $main-header-height;
-    font-size: 1.25rem;
-    margin: 0 1rem;
-}
-
-.pl-brand--plugilo {
-    .pl-icon-plug-a {
-        position: relative;
-        top: 2px;
-        margin-right: .25rem;
-    }
-}
-
-.pl-topbar {
-    margin-left: auto;
-}
-
-.pl-topbar-nav {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.pl-topbar-nav__item {
-    height: 100%;
-    padding: 0 .5rem;
-}
-
-.pl-topbar-nav__link {
-    position: relative;
-    display: table;
-    table-layout: fixed;
-    height: 100%;
-    outline: 0;
-    vertical-align: middle;
-    text-decoration: none !important;
-    color: $dark;
-    >.pl-topbar-nav__link-icon,
-    >.pl-topbar-nav__userpic {
-        display: table-cell;
-        width: 2rem;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 1rem;
-    }
-    .pl-topbar-nav__link-icon-wrapper {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        vertical-align: middle;
-        transition: background-color .3s ease;
-        &:hover {
-            background: rgba(0, 0, 0, .05);
-        }
-    }
-    >.pl-topbar-nav__link-badge {
-        position: absolute;
-        left: 50%;
-        margin-left: -2px; // top: .125rem;
-        top: .25rem;
-        text-align: center;
-    }
-    >.pl-topbar-nav__userpic img {
-        display: block;
-        width: 2rem;
-        height: 2rem;
-        object-fit: cover;
-    }
-}
-
-.pl-badge {
-    background: #eaeaea;
-    color: #444;
-    font-size: .8rem;
-    line-height: 20px;
-    min-height: 20px;
-    min-width: 20px;
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
-    padding: 0 3px;
-    border-radius: .75rem;
-    &.pl-badge--dot {
-        padding: 0;
-        line-height: 6px;
-        min-height: 6px;
-        min-width: 6px;
-        height: 6px;
-        width: 6px;
-        border-radius: 100%;
-    }
-    &.pl-badge--dot-small {
-        padding: 0;
-        line-height: 4px;
-        min-height: 4px;
-        min-width: 4px;
-        height: 4px;
-        width: 4px;
-        border-radius: 100%;
-    }
-    &.pl-badge--danger {
-        background-color: $danger;
-        color: #fff;
-    }
-}
-
-// Quick Sidebar
-.pl-quick-sidebar {
-    z-index: 1001;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    bottom: 0;
-    overflow-y: auto;
-    width: 400px;
-    background-color: $white;
-    transition: all .3s ease;
-}
-
-.pl-quick-sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, .1);
-    display: none;
-}
-
-.pl-quick-sidebar--on {
-    .pl-quick-sidebar {
-        right: 0;
-    }
-    .pl-quick-sidebar-overlay {
-        display: block;
-    }
-}
-
-// Nav view
-.pl-navviews {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.pl-navview {
-    margin: 0.5rem;
-    position: relative;
-    border-radius: $border-radius;
-    background-color: $gray-100;
-}
-
-.pl-navview__header {
-    position: relative;
-    line-height: 2.5rem;
-    padding: 0 1.5rem;
-}
-
-.pl-navview__header-text {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.pl-navview__header-icon {
-    width: 1.5rem;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.pl-navview__body {
-    // padding: 0 .5rem .5rem;
-    padding-bottom: .5rem;
-}
-
-.pl-navview__items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.pl-navview__item {
-    padding: 0 0 0 1.5rem;
-    position: relative;
-}
-
-.pl-navview__item-link {
-    position: relative;
-    display: block;
-    line-height: 1.5rem;
-    color: $dark;
-}
-
-.pl-navview__item-expander {
-    position: absolute;
-    padding: 0 .25rem;
-    left: .5rem;
-    line-height: 1.5rem;
-    cursor: pointer;
-}
-
-.pl-navview--primary {
-    background-color: $primary;
-    color: $light;
-    .pl-navview__item-link {
-        color: $light;
-    }
-}
+@import "styles.variables";
+@import "components/core";
+@import "components/quick-sidebar";
+@import "components/badges";
+@import "components/nav-view";
 
 .pl-content-tabs {
     .pl-nav__item {
@@ -491,17 +37,12 @@ app-home,
 .pl-content-actions {
     .nav-link {
         line-height: 1rem;
-        color: $gray-600 !important;
         font-size: 0.875rem;
     }
     .pl-nav__link-icon {
         margin-right: 0.25rem;
     }
 }
-
-.pl-body-inner {
-
-} 
 
 .pl-body-inner--lightgray {
     background-color: #F4F4F4;
@@ -515,6 +56,7 @@ app-home,
     label, 
     .form-control {
         font-size: .875rem;
+        border-radius: $border-radius;
     }
 
     .form-control {
@@ -528,13 +70,22 @@ app-home,
     padding: 0;
 }
 
-.pl-content-item {
-    background-color: $white;
-    width: 16rem;
+$pl-card-width: 16rem;
+.pl-content-card {
+    width: $pl-card-width;
     float: left;
     margin: 0 1rem 1rem 0;
+    background-color: $white;
+    border-radius: $border-radius;
+    // @include shadow-sm;
 }
 
-.pl-content-item__bottom {
+.pl-content-card__bottom {
     font-size: .75rem;
+}
+
+.pl-content-card__img.pl-content-card__img--square img {
+    width: $pl-card-width;
+    height: $pl-card-width;
+    object-fit: cover;
 }

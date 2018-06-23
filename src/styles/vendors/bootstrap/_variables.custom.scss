@@ -15,21 +15,27 @@ $gray-900: #212529;
 $black : #000;
 
 $font-size-base:    0.875rem;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-bold:            600;
+
 // Body
 //
 // Settings for the `<body>` element.
 $body-bg : $white;
-$body-color : $gray-700;
+$body-color : $gray-800;
 $primary : #42A9DE;
-$secondary : #eaeaea;
+
+// $secondary : #eaeaea;
 $success : #34bfa3;
 $info : #36a3f7;
 $warning : #ffb822;
 $danger : #f4516c;
-$theme-colors: ( "primary" : $primary, "secondary" : $secondary, "success" : $success, "info" : $info, "warning" : $warning, "danger" : $danger);
+$theme-colors: ( "primary" : $primary, "success" : $success, "info" : $info, "warning" : $warning, "danger" : $danger);
 $line-height-base : 1.5;
+
 $border-radius : .125rem;
-$border-radius-lg : .125rem;
+$border-radius-lg : .25rem;
 $border-radius-sm : .125rem;
 
 // Grid columns
@@ -61,3 +67,14 @@ $input-padding-x-sm : .5rem;
 $input-padding-x-lg : 1rem;
 
 $custom-select-padding-y:           0;
+
+// Badges
+
+$badge-font-size:                   .75rem;
+$badge-padding-y:                   .125rem;
+$badge-padding-x:                   .25rem;
+
+$badge-pill-padding-x:              .25rem;
+// Use a higher than normal value to ensure completely rounded edges when
+// customizing padding or font-size on labels.
+$badge-pill-border-radius:          10rem;

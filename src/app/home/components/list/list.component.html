@@ -1,55 +1,55 @@
 <div class="pl-body-inner pl-body-inner--lightgray container-fluid">
   <div class="d-flex py-2 mb-3">
-    <div class="text-black-50">
+    <div class="text-muted">
       <span class="fa fa-th-large mr-2"></span>
       <span class="">20 of 45 items</span>
     </div>
 
     <form class="form-inline ml-auto pl-list-filters pl-list-filters--default">
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">List</label>
+        <label for="" class="mr-2 text-muted">List</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">All</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">Type</label>
+        <label for="" class="mr-2 text-muted">Type</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">All</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">From</label>
+        <label for="" class="mr-2 text-muted">From</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">All</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">Area</label>
+        <label for="" class="mr-2 text-muted">Area</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">Germany</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">Time</label>
+        <label for="" class="mr-2 text-muted">Time</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">All</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">Sort by</label>
+        <label for="" class="mr-2 text-muted">Sort by</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">Newest</option>
         </select>
       </div>
 
       <div class="form-group ml-3">
-        <label for="" class="mr-2 text-black-50">View</label>
+        <label for="" class="mr-2 text-muted">View</label>
         <select name="" id="" class="form-control form-control-sm">
           <option value="">Big boxes</option>
         </select>
@@ -58,45 +58,144 @@
   </div>
 
   <ul class="pl-content-list pl-content-list--grid pl-content-list--lines">
-    <li class="pl-content-item pl-content--card pl-content--line shadow-sm" *ngFor="let content of [1,2,3,4,5]">
-      <div class="pl-content-item__top p-2">
-        <div class="custom-control custom-checkbox mr-2">
+
+    <!-- TODO: separate it into component -->
+    <li class="pl-content-card shadow-sm" *ngFor="let content of [1,2,3,4]">
+
+      <!-- Card top -->
+      <div class="px-2 py-1 pl-content-card__body">
+        <!-- Checkbox -->
+        <div class="custom-control custom-checkbox mr-2 d-inline-block">
           <input type="checkbox" class="custom-control-input" id="customControlAutosizing" checked>
-          <label class="custom-control-label text-black-50" for="customControlAutosizing">ALSO</label>
+          <label class="custom-control-label text-muted" for="customControlAutosizing">ALSO</label>
+        </div>
+
+        <!-- Date Time         -->
+        <span class="text-small text-muted-2 mr-2">15 Mar 18</span>
+
+        <!-- State -->
+        <span class="badge badge-warning mr-2">NEW</span>
+
+        <!-- Certified -->
+        <div class="float-right text-small text-muted">
+          <span class="fa fa-shield-alt"></span>
         </div>
       </div>
 
-      <div class="pl-content-item__cover">
+      <!-- Card image -->
+      <!-- pl-content-card__img--top, pl-content-card__img--bottom -->
+      <div class="pl-content-card__img">
         <img class="img-fluid" src="http://img.freepik.com/free-vector/abstract-background-with-colorful-rounded-shapes_23-2147844162.jpg?size=500&ext=jpg"
           alt="">
       </div>
 
-      <div class="pl-content-item__title px-2 py-1">
-        <div>
+      <div class="pl-content-card__title px-2 py-1">
+        <p>
           Apparently we had reached a great height in the atmosphere
-        </div>
+        </p>
         <div>
           <a href="">Jetzt ansehen</a>
         </div>
       </div>
 
-      <div class="pl-content-item__bottom p-2 d-flex">
-        <div>Bookmark</div>
-        <ul class="ml-auto d-flex list-unstyled text-black-50">
-          <li class="ml-2">
+      <!-- Card bottom -->
+      <div class="px-2 py-1">
+        <span class="text-small text-muted">Bookmark</span>
+        <ul class="float-right list-inline text-small text-muted">
+          <li class="list-inline-item">
             <span class="pl-icon-plug-a mr-1"></span>
             <span>23</span>
           </li>
-          <li class="ml-2">
+          <li class="list-inline-item">
             <span class="fa fa-eye  mr-1"></span>
             <span>4T</span>
           </li>
-          <li class="ml-2">
+          <li class="list-inline-item">
             <span class="far fa-comment-alt mr-1"></span>
             <span>12</span>
           </li>
         </ul>
       </div>
     </li>
+
+
+    <!-- TODO: separate it into component -->
+    <li class="pl-content-card pl-content-card--company shadow-sm" *ngFor="let content of [1,2,3,4]">
+
+        <!-- Card top -->
+        <div class="px-2 py-1 pl-content-card__body">
+          <!-- Checkbox -->
+          <div class="custom-control custom-checkbox mr-2 d-inline-block">
+            <input type="checkbox" class="custom-control-input" id="customControlAutosizing" checked>
+            <label class="custom-control-label text-muted" for="customControlAutosizing">ALSO</label>
+          </div>
+  
+          <!-- Certified -->
+          <div class="float-right text-small text-muted">
+            <span class="fa fa-shield-alt"></span>
+          </div>
+        </div>
+  
+        <!-- Card image -->
+        <!-- pl-content-card__img--top, pl-content-card__img--bottom -->
+        <div class="pl-content-card__img pl-content-card__img--square">
+          <img class="img-fluid" src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?auto=compress&cs=tinysrgb&h=350"
+            alt="">
+        </div>
+  
+        <!-- Card bottom -->
+        <div class="px-2 py-1">
+          <span class="text-small text-muted">Bookmark</span>
+          <ul class="float-right list-inline text-small text-muted">
+            <li class="list-inline-item">
+              <span class="pl-icon-plug-a mr-1"></span>
+              <span>23</span>
+            </li>
+            <li class="list-inline-item">
+              <span class="fa fa-eye  mr-1"></span>
+              <span>4T</span>
+            </li>
+            <li class="list-inline-item">
+              <span class="far fa-comment-alt mr-1"></span>
+              <span>12</span>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- TODO: separate it into component -->
+    <li class="pl-content-card pl-content-card--company shadow-sm" *ngFor="let content of [1,2,3,4]">
+
+        <!-- Card top -->
+        <div class="px-2 py-1 pl-content-card__body">
+          Thomas Edison
+        </div>
+  
+        <!-- Card image -->
+        <!-- pl-content-card__img--top, pl-content-card__img--bottom -->
+        <div class="pl-content-card__img pl-content-card__img--square">
+          <img class="img-fluid" src="https://vignette.wikia.nocookie.net/moviedatabase/images/8/8c/Tony_Stark.jpg/revision/latest?cb=20150430161420"
+            alt="">
+        </div>
+  
+        <!-- Card bottom -->
+        <div class="px-2 py-1">
+          <span class="text-small text-muted">Friends</span>
+          <ul class="float-right list-inline text-small text-muted">
+            <li class="list-inline-item">
+              <span class="pl-icon-plug-a mr-1"></span>
+              <span>23</span>
+            </li>
+            <li class="list-inline-item">
+              <span class="fa fa-eye  mr-1"></span>
+              <span>4T</span>
+            </li>
+            <li class="list-inline-item">
+              <span class="far fa-comment-alt mr-1"></span>
+              <span>12</span>
+            </li>
+          </ul>
+        </div>
+      </li>
   </ul>
 </div>

@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule, RouterState } from '@angular/router';
+import { RouterModule, RouterState, RouterStateSnapshot } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -82,7 +82,7 @@ import { HighlightComponent } from './home/components/highlight/highlight.compon
     // AngularFireAuth,
     // AuthService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
-    { provide: RouterStateSerializer, useClass: CustomSerializer }
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
   ],
   bootstrap: [AppComponent]
 })

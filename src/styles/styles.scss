@@ -89,3 +89,16 @@ $pl-card-width: 16rem;
     height: $pl-card-width;
     object-fit: cover;
 }
+
+.pl-content-card--line {
+    width: auto;
+    float: none;
+}
+
+.pl-header-search {
+    background-color: $gray-100;
+    line-height: 2rem;
+    padding: 0 1rem;
+    border-radius: $border-radius;
+    width: 100%;
+}

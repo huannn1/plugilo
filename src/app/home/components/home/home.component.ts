@@ -1,3 +1,4 @@
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -10,10 +11,14 @@ export class HomeComponent implements OnInit {
   isMenuActiveOnDesktop = true;
   isMenuActiveOnMobile = false;
   isQuickSidebarActive = false;
+  isListContext = false;
 
-  constructor() { }
+  constructor(private router: Router) {
+    
+   }
 
   ngOnInit() {
+    this.isListContext = this.router.url.indexOf('list') !== -1;
   }
 
   toggleMenu() {

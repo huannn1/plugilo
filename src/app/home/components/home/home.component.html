@@ -18,15 +18,20 @@
     </div>
 
     <div class="pl-header__center">
-      <div class="pl-header__content-title">
+      <div class="pl-header__content-title" *ngIf="!isListContext">
         <span class="fa fa-building"></span>
         DCI AG Title Or Something will be here
+      </div>
+
+      <div class="pl-header-search" *ngIf="isListContext">
+        <span class="fa fa-search mr-2"></span>
+        <span class="text-muted-2">Search box placeholder</span>
       </div>
     </div>
 
     <div class="pl-topbar">
       <ul class="pl-topbar-nav pl-topbar-nav--inline mr-auto">
-        <li class="pl-topbar-nav__item">
+        <li class="pl-topbar-nav__item" *ngIf="!isListContext">
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-icon">
               <span class="pl-topbar-nav__link-icon-wrapper">
@@ -119,19 +124,19 @@
 
       <ul class="nav pl-content-actions d-none d-lg-flex ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="" class="text-muted">
+          <a class="nav-link text-muted" href="">
             <span class="pl-icon-plug-a pl-nav__link-icon"></span>
             <span class="">Connect</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link text-muted">
             <span class="far fa-comment-alt pl-nav__link-icon"></span>
             <span>Chat</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link text-muted">
             <span class="fa fa-share-alt pl-nav__link-icon"></span>
             <span>Share</span>
           </a>

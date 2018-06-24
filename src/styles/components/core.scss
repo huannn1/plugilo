@@ -324,3 +324,9 @@ app-home,
 .text-muted-2 {
     color: $gray-500;
 }
+
+.pl-custom-checkbox {
+    .custom-control-label {
+        line-height: 1.5rem;
+    }
+}

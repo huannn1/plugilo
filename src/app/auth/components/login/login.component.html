@@ -1,15 +1,80 @@
-<form class="form-signin">
-  <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
+<div class="flex-grow-1" style="background: #2391ca">
+  <div class="pl-login-header p-4 mb-4">
+    <div class="container">
+      <div class="pl-brand pl-brand--plugilo text-white m-0">
+        <span class="pl-icon-plug-a pl-brand__icon"></span>
+        <span>plugilo</span>
+      </div>
+    </div>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-</form>
+
+  <div class="pl-login-body">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="text-white mb-5">
+            <h1 class="mb-5">Welcome to the Plugilo network</h1>
+            <p class="lead mb-5 text-white-50">
+              We are the best and biggest social network with 5 billion active users all around the world. Share you thoughts, write blog
+              posts, show your favourite music via Stopify, earn badges and much more!
+            </p>
+            <a href="#" class="btn btn-outline-light">Register Now!</a>
+          </div>
+        </div>
+
+        <div class="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
+          <form class="bg-white p-4">
+            <div class="mb-5">
+              <div class="form-group">
+                <h4 class="font-weight-bold">Create a free account</h4>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <input type="text" class="form-control form-control-lg" placeholder="First name">
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="text" class="form-control form-control-lg" placeholder="Last name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" placeholder="Email">
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" placeholder="Password">
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" placeholder="Re-enter password">
+              </div>
+
+              <a class="btn btn-primary btn-block btn-lg" href="#" [routerLink]="['/company']">SIGN UP</a>
+              <p class="mt-1 mb-3 text-muted-2 text-small">
+                By creating an account you accept our
+                <u>plugilo terms</u>
+              </p>
+            </div>
+
+            <div class="mb-5">
+              <p>
+                <a href="#" class="font-weight-bold">Already have an account ? Sign In</a>
+              </p>
+              <button class="btn btn-block text-left btn--bg-fb text-white">
+                <span class="fab fa-facebook mr-2"></span>
+                Sign in with Facebook
+              </button>
+              <button class="btn btn-block text-left btn--bg-gg text-white">
+                <span class="fab fa-google mr-2"></span>
+                Sign in with Google
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

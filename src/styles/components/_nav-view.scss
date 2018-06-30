@@ -1,0 +1,70 @@
+// Nav view
+.pl-navviews {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pl-navview {
+    margin: 0.5rem;
+    position: relative;
+    border-radius: $border-radius;
+    // background-color: $gray-100;
+}
+
+.pl-navview__header {
+    position: relative;
+    line-height: 2.5rem;
+    padding: 0 1.5rem;
+}
+
+.pl-navview__header-text {
+    // font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pl-navview__header-icon {
+    width: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.pl-navview__body {
+    // padding: 0 .5rem .5rem;
+    padding-bottom: .5rem;
+}
+
+.pl-navview__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pl-navview__item {
+    padding: 0 0 0 1.5rem;
+    position: relative;
+}
+
+.pl-navview__item-link {
+    position: relative;
+    display: block;
+    line-height: 1.5rem;
+    color: $dark;
+}
+
+.pl-navview__item-expander {
+    position: absolute;
+    padding: 0 .25rem;
+    left: .5rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+}
+
+.pl-navview--primary {
+    background-color: $primary;
+    color: $light;
+    .pl-navview__item-link {
+        color: $light;
+    }
+}

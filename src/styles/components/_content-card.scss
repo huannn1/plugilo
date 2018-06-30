@@ -1,0 +1,32 @@
+$pl-card-width: 16rem;
+.pl-content-card {
+    width: $pl-card-width;
+    float: left;
+    margin: 0 1rem 1rem 0;
+    background-color: $white;
+    border-radius: $border-radius; // @include shadow-sm;
+}
+
+.pl-content-card__bottom {
+    font-size: .75rem;
+}
+
+.pl-content-card__img.pl-content-card__img--square img {
+    width: $pl-card-width;
+    height: $pl-card-width;
+    object-fit: cover;
+}
+
+.pl-content-card--line {
+    width: auto;
+    float: none;
+}
+
+.pl-content-list--grid {
+    column-width: 256px;
+    column-gap: 16px; // width: 100%;
+    // margin: 0 auto
+    .pl-content-card {
+        -webkit-column-break-inside: avoid;
+    }
+}

@@ -7,24 +7,26 @@
     <div class="pl-header__left">
       <div class="pl-aside-toggler">
         <button class="pl-aside-toggler__btn" (click)="toggleMenu()">
-          <span class="fa fa-bars"></span>
+          <span class="far fa-bars"></span>
         </button>
       </div>
 
       <div class="pl-brand pl-brand--plugilo d-none d-lg-block">
-        <span class="pl-icon-plug-a pl-brand__icon"></span>
-        <span>plugilo</span>
+        <a [routerLink]="['/company']" class="text-dark">
+          <span class="pl-icon-plug-a pl-brand__icon"></span>
+          <span>plugilo</span>
+        </a>
       </div>
     </div>
 
     <div class="pl-header__center">
       <div class="pl-header__content-title" *ngIf="!isListContext">
-        <span class="fa fa-building"></span>
-        DCI AG Title Or Something will be here
+        <div class="text-small text-muted">DCI AG</div>
+        <div class="font-weight-bold"><span class="far fa-building"></span> Hello Network</div>
       </div>
 
       <div class="pl-header-search" *ngIf="isListContext">
-        <span class="fa fa-search mr-2"></span>
+        <span class="far fa-search mr-2"></span>
         <span class="text-muted-2">Search box placeholder</span>
       </div>
     </div>
@@ -35,7 +37,7 @@
           <a class="pl-topbar-nav__link" href="#">
             <span class="pl-topbar-nav__link-icon">
               <span class="pl-topbar-nav__link-icon-wrapper">
-                <span class="fa fa-search pl-topbar-nav__icon"></span>
+                <span class="far fa-search pl-topbar-nav__icon"></span>
               </span>
             </span>
           </a>
@@ -64,13 +66,13 @@
             <span class="pl-topbar-nav__link-badge pl-badge pl-badge--danger pl-badge--dot-small"></span>
             <span class="pl-topbar-nav__link-icon">
               <span class="pl-topbar-nav__link-icon-wrapper">
-                <span class="fa fa-globe pl-topbar-nav__icon"></span>
+                <span class="far fa-globe pl-topbar-nav__icon"></span>
               </span>
             </span>
           </a>
         </li>
         <li class="pl-topbar-nav__item">
-          <a class="pl-topbar-nav__link" href="#" (click)="toggleQuickSidebar()">
+          <a class="pl-topbar-nav__link" (click)="toggleQuickSidebar()">
             <span class="pl-topbar-nav__userpic">
               <img class="rounded-circle" src="https://keenthemes.com/metronic/preview/assets/app/media/img/users/user4.jpg" alt="">
             </span>
@@ -84,32 +86,45 @@
 
   <div class="pl-body">
     <div class="pl-content-topbar shadow-sm d-flex">
-      <ul class="nav pl-content-tabs">
-        <li class="nav-item pl-nav__item">
-          <a class="nav-link pl-nav__link" href="#">
-            <span class="fa fa-eye"></span>
+      <ul class="nav pl-content-tabs" *ngIf="!isListContext">
+        <li class="nav-item pl-nav__item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company']">
+            <span class="far fa-eye"></span>
+            Web
+          </a>
+        </li>
+        <li class="nav-item pl-nav__item" routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'data']">
+            <span class="far fa-eye"></span>
             Data
           </a>
         </li>
-        <li class="nav-item pl-nav__item active">
-          <a class="nav-link pl-nav__link" href="#">
-            <span class="fa fa-box"></span>
+        <li class="nav-item pl-nav__item" routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'highlights']">
+            <span class="far fa-box"></span>
+            Highlights
+          </a>
+        </li>
+        <li class="nav-item pl-nav__item" routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'products']">
+            <span class="far fa-box"></span>
             Products
           </a>
         </li>
-        <li class="nav-item pl-nav__item">
-          <a class="nav-link pl-nav__link" href="#">
-            <span class="fa fa-building"></span>
+        <li class="nav-item pl-nav__item" routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'companies']">
+            <span class="far fa-building"></span>
             Companies</a>
         </li>
-        <li class="nav-item pl-nav__item ">
-          <a class="nav-link pl-nav__link" href="#">
-            <span class="fa fa-users"></span>
+        <li class="nav-item pl-nav__item " routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'users']">
+            <span class="far fa-users"></span>
             Users</a>
         </li>
-        <li class="nav-item pl-nav__item ">
-          <a class="nav-link pl-nav__link" href="#">
-            <span class="fa fa-list"></span>
+        <li class="nav-item pl-nav__item " routerLinkActive="active">
+          <a class="nav-link pl-nav__link" [routerLink]="['/company', 'lists']">
+            <span class="far fa-list"></span>
             Lists</a>
         </li>
       </ul>
@@ -137,7 +152,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link text-muted">
-            <span class="fa fa-share-alt pl-nav__link-icon"></span>
+            <span class="far fa-share-alt pl-nav__link-icon"></span>
             <span>Share</span>
           </a>
         </li>
@@ -147,15 +162,17 @@
     <!-- Aside Left -->
     <div class="pl-aside-left pl-aside-left--skin-light">
       <div class="pl-brand pl-brand--plugilo d-lg-none">
-        <span class="pl-icon-plug-a pl-brand__icon"></span>
-        <span>plugilo</span>
+        <a [routerLink]="['/company']">
+          <span class="pl-icon-plug-a pl-brand__icon"></span>
+          <span>plugilo</span>
+        </a>
       </div>
 
       <ul class="pl-navviews">
         <li class="pl-navview pl-navview--primary">
           <header class="pl-navview__header ">
             <span class="pl-navview__header-icon far fa-bell"></span>
-            <span class="pl-navview__header-text">Nav view header 01</span>
+            <span class="pl-navview__header-text">DCI Media</span>
             <span class="pl-navview__header-expander"></span>
           </header>
 
@@ -167,7 +184,7 @@
                 </a>
               </li>
               <li class="pl-navview__item">
-                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <span class="pl-navview__item-expander fal fa-caret-right"></span>
                 <a class="pl-navview__item-link">
                   <span class="pl-navview__item-text">Platform</span>
                 </a>
@@ -175,14 +192,36 @@
               <li class="pl-navview__item">
                 <span class="pl-navview__item-expander"></span>
                 <a class="pl-navview__item-link">
-                  <span class="pl-navview__item-text">Hello</span>
+                  <span class="pl-navview__item-text">Brands</span>
                 </a>
               </li>
               <li class="pl-navview__item">
                 <a class="pl-navview__item-link">
                   <span class="pl-navview__item-expander"></span>
-                  <span class="pl-navview__item-text">Great</span>
+                  <span class="pl-navview__item-text">Notebook</span>
                 </a>
+              </li>
+              <li class="pl-navview__item">
+                <span class="pl-navview__item-expander fal fa-caret-right"></span>
+                <a class="pl-navview__item-link">
+                  <span class="pl-navview__item-text">Samsung - Hotdeals</span>
+                </a>
+
+                <div>
+                  <ul class="pl-navview__items">
+                    <li class="pl-navview__item">
+                      <span class="pl-navview__item-expander fal fa-caret-right"></span>
+                      <a class="pl-navview__item-link">
+                        <span class="pl-navview__item-text">Galaxy Note 3</span>
+                      </a>
+                    </li>
+                    <li class="pl-navview__item">
+                      <a class="pl-navview__item-link">
+                        <span class="pl-navview__item-text">Sony</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -190,7 +229,7 @@
 
         <li class="pl-navview">
           <header class="pl-navview__header">
-            <span class="pl-navview__header-icon fa fa-list"></span>
+            <span class="pl-navview__header-icon far fa-list"></span>
             <span class="pl-navview__header-text">My Lists</span>
             <span class="pl-navview__header-expander"></span>
           </header>
@@ -203,7 +242,7 @@
                 </a>
               </li>
               <li class="pl-navview__item">
-                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <span class="pl-navview__item-expander fal fa-caret-right"></span>
                 <a class="pl-navview__item-link">
                   <span class="pl-navview__item-text">DCI Test</span>
                 </a>
@@ -226,7 +265,7 @@
 
         <li class="pl-navview">
           <header class="pl-navview__header">
-            <span class="pl-navview__header-icon fa fa-clock"></span>
+            <span class="pl-navview__header-icon far fa-clock"></span>
             <span class="pl-navview__header-text">Recent Items</span>
             <span class="pl-navview__header-expander"></span>
           </header>
@@ -239,7 +278,7 @@
                 </a>
               </li>
               <li class="pl-navview__item">
-                <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                <span class="pl-navview__item-expander fal fa-caret-right"></span>
                 <a class="pl-navview__item-link">
                   <span class="pl-navview__item-text">Samsung - Hotdeals</span>
                 </a>
@@ -247,7 +286,7 @@
                 <div>
                   <ul class="pl-navview__items">
                     <li class="pl-navview__item">
-                      <span class="pl-navview__item-expander fa fa-caret-right"></span>
+                      <span class="pl-navview__item-expander fal fa-caret-right"></span>
                       <a class="pl-navview__item-link">
                         <span class="pl-navview__item-text">Galaxy Note 3</span>
                       </a>
@@ -281,7 +320,7 @@
 
     <!-- Aside Right -->
     <div class="pl-quick-sidebar">
-      Hello
+      Notifications, Inbox, ...will be here
     </div>
     <div class="pl-quick-sidebar-overlay" (click)="toggleQuickSidebar()"></div>
 

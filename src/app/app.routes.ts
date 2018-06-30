@@ -8,10 +8,9 @@ import { HomeComponent } from './home/components/home/home.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { BootstrapallComponent } from './home/components/bootstrapall/bootstrapall.component';
-import { CompanyDataComponent } from './home/components/company-data/company-data.component';
-import { CompanyWebComponent } from './home/components/company-web/company-web.component';
 import { ListComponent } from './home/components/list/list.component';
 import { HighlightComponent } from './home/components/highlight/highlight.component';
+import { ConnectDemoComponent } from './home/components/connect-demo/connect-demo.component';
 // import { CanActivateViaAuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
@@ -31,18 +30,13 @@ export const routes: Routes = [
             {
                 path: 'company',
                 loadChildren: './company/company.module#CompanyModule'
+            },{
+                path: 'search',
+                loadChildren: './search/search.module#SearchModule'
             },
             {
                 path: 'bootstrap',
                 component: BootstrapallComponent
-            },
-            {
-                path: 'company-data',
-                component: CompanyDataComponent
-            },
-            {
-                path: 'company-web',
-                component: CompanyWebComponent
             },
             {
                 path: 'list',
@@ -51,6 +45,10 @@ export const routes: Routes = [
             {
                 path: 'highlight',
                 component: HighlightComponent
+            },
+            {
+                path: 'connect',
+                component: ConnectDemoComponent
             },
         ]
     },

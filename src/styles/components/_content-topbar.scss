@@ -1,0 +1,38 @@
+.pl-content-tabs {
+    .pl-nav__item {
+        font-size: 0.875rem;
+        margin: 0 1rem;
+    }
+    .pl-nav__link {
+        position: relative;
+        border: 0;
+        border-radius: 0;
+        padding: .5rem 0rem;
+        line-height: 1rem;
+        color: inherit; // font-weight: 600;
+        text-transform: uppercase;
+    }
+    .pl-nav__item.active>.pl-nav__link {
+        color: $primary;
+    }
+    .pl-nav__item.active>.pl-nav__link:after {
+        content: "";
+        display: block;
+        height: .125rem;
+        width: 100%;
+        background-color: $primary;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+}
+
+.pl-content-actions {
+    .nav-link {
+        line-height: 1rem;
+        font-size: 0.875rem;
+    }
+    .pl-nav__link-icon {
+        margin-right: 0.25rem;
+    }
+}

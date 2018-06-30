@@ -1,0 +1,44 @@
+<div class="pl-body-inner pl-body-inner--lightgray container-fluid">
+  <list-filters></list-filters>
+
+  <ul class="pl-content-list pl-content-list--grid pl-content-list--lines">
+
+    <!-- TODO: separate it into component -->
+    <li class="pl-content-card pl-content-card--company shadow-sm" *ngFor="let user of users">
+
+      <!-- Card top -->
+      <div class="px-2 py-1 pl-content-card__body">
+        {{user.name}}
+      </div>
+
+      <!-- Card image -->
+      <!-- pl-content-card__img--top, pl-content-card__img--bottom -->
+      <div class="pl-content-card__img pl-content-card__img--square">
+        <img class="img-fluid" [src]="user.photo"
+          alt="">
+      </div>
+
+      <!-- Card bottom -->
+      <div class="px-2 py-1">
+        <span class="text-small text-muted">{{user.username}}</span>
+        <ul class="float-right list-inline text-small text-muted">
+          <li class="list-inline-item">
+            <span class="pl-icon-plug-a mr-1"></span>
+            <span>23</span>
+          </li>
+          <li class="list-inline-item">
+            <span class="fa fa-eye  mr-1"></span>
+            <span>4T</span>
+          </li>
+          <li class="list-inline-item">
+            <span class="far fa-comment-alt mr-1"></span>
+            <span>12</span>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="clearfix"></li>
+
+  </ul>
+</div>

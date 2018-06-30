@@ -1,104 +1,37 @@
-@import "styles.variables";
-@import "components/core";
-@import "components/quick-sidebar";
-@import "components/badges";
-@import "components/nav-view";
+// *** Vendor ***
+// Bootstrap
+@import "./vendors/bootstrap/bootstrap.custom";
 
-.pl-content-tabs {
-    .pl-nav__item {
-        font-size: 0.875rem;
-        margin: 0 1rem;
-    }
-    .pl-nav__link {
-        position: relative;
-        border: 0;
-        border-radius: 0;
-        padding: .5rem 0rem;
-        line-height: 1rem;
-        color: inherit;
-        // font-weight: 600;
-        text-transform: uppercase;
-    }
-    .pl-nav__item.active>.pl-nav__link {
-        color: $primary;
-    }
-    .pl-nav__item.active>.pl-nav__link:after {
-        content: "";
-        display: block;
-        height: .125rem;
-        width: 100%;
-        background-color: $primary;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-    }
-}
+// *** Settings ***
+// Bass settings
+// Colors
+@import "./styles.variables";
+// @import "vendors/font-awesome/all";
 
-.pl-content-actions {
-    .nav-link {
-        line-height: 1rem;
-        font-size: 0.875rem;
-    }
-    .pl-nav__link-icon {
-        margin-right: 0.25rem;
-    }
-}
+// *** Utils ***
+@import "./utilities/misc";
+// Transition
+// Animations
+
+// *** Base ***
+@import "./base/core";
+// Typography
+
+// *** Components ***
+@import "./components/badges";
+@import "./components/content-card";
+@import "./components/content-topbar";
+@import "./components/header";
+@import "./components/list-filters";
+@import "./components/nav-view";
+@import "./components/quick-sidebar";
 
 .pl-body-inner--lightgray {
-    background-color: #F4F4F4;
-}
-
-.pl-list-filters {
-
-}
-
-.pl-list-filters--default {
-    label, 
-    .form-control {
-        font-size: .875rem;
-        border-radius: $border-radius;
-    }
-
-    .form-control {
-        background-color: transparent;
-    }
+    background-color: $gray-100;
 }
 
 .pl-content-list {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-$pl-card-width: 16rem;
-.pl-content-card {
-    width: $pl-card-width;
-    float: left;
-    margin: 0 1rem 1rem 0;
-    background-color: $white;
-    border-radius: $border-radius;
-    // @include shadow-sm;
-}
-
-.pl-content-card__bottom {
-    font-size: .75rem;
-}
-
-.pl-content-card__img.pl-content-card__img--square img {
-    width: $pl-card-width;
-    height: $pl-card-width;
-    object-fit: cover;
-}
-
-.pl-content-card--line {
-    width: auto;
-    float: none;
-}
-
-.pl-header-search {
-    background-color: $gray-100;
-    line-height: 2rem;
-    padding: 0 1rem;
-    border-radius: $border-radius;
-    width: 100%;
 }
